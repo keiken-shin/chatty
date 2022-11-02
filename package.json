@@ -1,7 +1,7 @@
 {
   "name": "chatty",
   "version": "1.0.0",
-  "description": "your homeroom chat box",
+  "description": "your homeroom realtime chat box",
   "main": "server.js",
   "keywords": [
     "socket.io",

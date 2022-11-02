@@ -6,19 +6,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="css/main.css" />
+    <link rel="shortcut icon" href="images/favicon.svg" type="image/x-icon" />
 
-    <title>Chatty - Your homeroom chat box</title>
+    <title>Chatty - Your homeroom realtime chat box</title>
   </head>
-  <body>
+  <body class="bg-body">
+    <div class="bg-image"></div>
     <div class="join-container">
       <header class="join-header">
-        <h1>Chatty</h1>
+        <img
+          class="logo"
+          src="images/logo.svg"
+          alt="logo"
+          srcset="images/logo.svg"
+        />
+        <h1 class="logo-title">Chatty</h1>
       </header>
 
       <main class="join-main">
-        <form action="chatbox.html">
+        <section class="description">
+          <h3>Welcome aboard!</h3>
+          <p>Your homeroom realtime chat app</p>
+        </section>
+
+        <form class="join-form" action="chatbox.html">
           <div class="form-control">
-            <label for="username">Username</label>
+            <label for="username">Username <span class="astrik">*</span></label>
             <input
               type="text"
               name="username"
@@ -28,7 +41,7 @@
             />
           </div>
           <div class="form-control">
-            <label for="room">Room</label>
+            <label for="room">Room <span class="astrik">*</span></label>
             <select name="room" id="room">
               <option value="JavaScript">JavaScript</option>
               <option value="Python">Python</option>
@@ -38,7 +51,7 @@
               <option value="Java">Java</option>
             </select>
           </div>
-          <button type="submit" class="btn">Join Chat</button>
+          <button type="submit" class="join-button">Join Room</button>
         </form>
       </main>
     </div>
