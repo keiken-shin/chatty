@@ -39,14 +39,17 @@ io.on("connection", (socket) => {
     socket.join(user.room);
 
     // Welcome current user
-    socket.emit("message", formatMessage(BOT_NAME, "Welcome to Chatty"));
+    socket.emit(
+      "botMessage",
+      formatMessage(BOT_NAME, `Welcome to #${room.toLowerCase()}`)
+    );
 
     // Broadcast when a user connects
     socket.broadcast
       .to(user.room)
       .emit(
-        "message",
-        formatMessage(BOT_NAME, `${user.username} has joined the chat`)
+        "botMessage",
+        formatMessage(BOT_NAME, `${user.username} has joined the room`)
       );
 
     // Send user & room info
@@ -68,8 +71,8 @@ io.on("connection", (socket) => {
 
     if (user) {
       io.to(user.room).emit(
-        "message",
-        formatMessage(BOT_NAME, `${user.username} has left the chat`)
+        "botMessage",
+        formatMessage(BOT_NAME, `${user.username} has left the room`)
       );
 
       // Send user & room info

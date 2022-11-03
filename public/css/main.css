@@ -1,12 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+@import url("./_animations.css");
 @import url("./_login.css");
+@import url("./_chat.css");
 
 :root {
   /* Color */
-  --primary: #f06262;
-  --light: #ececec;
-  --dark: #222;
-  --bg-color: #9166ef;
+  --primary: rgb(240, 98, 98);
+  --secondary: rgb(145, 102, 239);
+  --light: rgb(237, 237, 237);
+  --dark: rgb(34, 34, 34);
+  --gray: rgba(70, 70, 70);
 
   /* Sizing */
   --size-px: 1px;
@@ -49,15 +52,20 @@
 body {
   font-family: "Poppins", sans-serif;
   font-size: 16px;
-}
-
-.bg-body {
   background-color: var(--dark);
   color: var(--light);
 }
 
+.bg-body {
+  background-color: var(--dark);
+}
+
+.hidden {
+  display: none;
+}
+
 @media only screen and (min-width: 480px) {
   .bg-body {
-    background-color: var(--bg-color);
+    background-color: var(--secondary);
   }
 }
